@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MorsMutal | First AI‑Powered Insurance Leads in Ft. Lauderdale</title>
+    <meta name="description" content="MorsMutal is the first AI‑powered leads finder for Ft. Lauderdale insurance agencies. Get high‑intent, verified prospects using proprietary AI technology.">
+    <style>
+        :root {
+            --ocean-deep: #0B3D5C;
+            --ocean-mid: #145C7A;
+            --ocean-light: #1A7FA0;
+            --coral: #E8775B;
+            --coral-glow: #F4976C;
+            --sand: #FBF5ED;
+            --sand-warm: #F5E6D3;
+            --white: #FFFFFF;
+            --off-white: #F9F7F4;
+            --text-dark: #1A1A2E;
+            --text-mid: #3D4F5F;
+            --text-light: #6B7D8E;
+            --gold: #C8963E;
+            --success: #2D9F6E;
+            --shadow-sm: 0 2px 8px rgba(11, 61, 92, 0.06);
+            --shadow-md: 0 8px 30px rgba(11, 61, 92, 0.10);
+            --shadow-lg: 0 20px 50px rgba(11, 61, 92, 0.14);
+            --shadow-xl: 0 30px 70px rgba(11, 61, 92, 0.18);
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--sand);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image:
+                radial-gradient(ellipse at 85% 5%, rgba(26, 127, 160, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 10% 90%, rgba(232, 119, 91, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 40%, rgba(200, 150, 62, 0.04) 0%, transparent 60%);
+        }
+
+        /* ── ANNOUNCEMENT BAR ── */
+        .announcement-bar {
+            background: var(--ocean-deep);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.8rem;
+            letter-spacing: 0.4px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        .announcement-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--coral-glow), var(--gold), var(--coral-glow), transparent);
+            animation: shimmerBar 3s ease-in-out infinite;
+        }
+        @keyframes shimmerBar {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .announcement-bar span {
+            color: var(--coral-glow);
+            font-weight: 800;
+            background: rgba(255,255,255,0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin: 0 3px;
+        }
+
+        /* ── NAVIGATION ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(11, 61, 92, 0.08);
+            padding: 0 20px;
+            transition: var(--transition);
+        }
+        .nav-inner {
+            max-width: 520px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--ocean-deep);
+            letter-spacing: -0.5px;
+        }
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(20, 92, 122, 0.3);
+        }
+        .nav-cta {
+            background: var(--coral);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(232, 119, 91, 0.35);
+        }
+        .nav-cta:hover,
+        .nav-cta:active {
+            background: #d4694f;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(232, 119, 91, 0.45);
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 30px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(26, 127, 160, 0.07);
+            border: 1px solid rgba(26, 127, 160, 0.18);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--ocean-mid);
+            margin-bottom: 18px;
+            letter-spacing: 0.3px;
+        }
+        .hero-badge .ai-icon {
+            font-size: 1rem;
+            filter: drop-shadow(0 2px 4px rgba(26,127,160,0.3));
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--ocean-deep);
+            letter-spacing: -0.8px;
+            margin-bottom: 10px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--coral), var(--coral-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        .hero h1 .underline-gold {
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 .underline-gold::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+        .hero-subtitle {
+            font-size: 0.98rem;
+            color: var(--text-mid);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--ocean-deep);
+        }
+        .hero-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 600;
+        }
+
+        /* ── LEAD CARD ── */
+        .lead-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 20px;
+            border: 1px solid rgba(11, 61, 92, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .lead-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A7FA0, #E8775B, #C8963E);
+            border-radius: 4px 4px 0 0;
+        }
+        .lead-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--ocean-deep);
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lead-card .card-subtitle {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+        .form-group {
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #E8ECF1;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            background: var(--off-white);
+            transition: var(--transition);
+            color: var(--text-dark);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--ocean-light);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(26, 127, 160, 0.08);
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%233D4F5F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--coral), #d45f42);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.4px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+            box-shadow: 0 8px 28px rgba(232, 119, 91, 0.4);
+            margin-top: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-submit:hover,
+        .btn-submit:active {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(232, 119, 91, 0.5);
+        }
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+        .form-trust {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .form-trust .lock-icon {
+            font-size: 0.85rem;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 30px 10px;
+            animation: fadeInUp 0.5s ease;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success .check-circle {
+            width: 64px;
+            height: 64px;
+            background: #e6f7ee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 2rem;
+            color: var(--success);
+        }
+        .form-success h4 {
+            font-family: var(--font-heading);
+            color: var(--ocean-deep);
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+        .form-success p {
+            color: var(--text-mid);
+            font-size: 0.9rem;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #leadForm.hidden {
+            display: none;
+        }
+
+        /* ── TRUST STRIP ── */
+        .trust-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 8px 0 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .trust-strip .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* ── SECTION HEADERS ── */
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section-header .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--coral);
+            margin-bottom: 6px;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--ocean-deep);
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-section {
+            padding: 10px 0 24px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 18px 14px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(11, 61, 92, 0.03);
+            transition: var(--transition);
+            cursor: default;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .service-card h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--ocean-deep);
+            margin-bottom: 3px;
+        }
+        .service-card p {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* ── TESTIMONIAL ── */
+        .testimonial-section {
+            padding: 10px 0 24px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 22px 18px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--coral);
+            position: relative;
+        }
+        .testimonial-card .quote-mark {
+            font-size: 3rem;
+            color: rgba(232, 119, 91, 0.15);
+            position: absolute;
+            top: 8px;
+            left: 14px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-card .quote-text {
+            font-style: italic;
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            padding-left: 6px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .testimonial-info strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--ocean-deep);
+        }
+        .testimonial-info span {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        /* ── HOW IT WORKS ── */
+        .steps-section {
+            padding: 10px 0 24px;
+        }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(20, 92, 122, 0.25);
+        }
+        .step-content h4 {
+            font-size: 0.9rem;
+            color: var(--ocean-deep);
+            margin-bottom: 2px;
+        }
+        .step-content p {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        /* ── BOTTOM CTA ── */
+        .bottom-cta {
+            background: linear-gradient(160deg, var(--ocean-deep) 0%, #0a2f45 100%);
+            border-radius: var(--radius-xl);
+            padding: 28px 20px;
+            text-align: center;
+            color: #fff;
+            margin: 8px 0 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .bottom-cta::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+        }
+        .bottom-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(200,150,62,0.12);
+        }
+        .bottom-cta h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.3px;
+        }
+        .bottom-cta p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+        .bottom-cta .btn-cta-secondary {
+            display: inline-block;
+            background: var(--coral);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 28px rgba(232,119,91,0.5);
+            transition: var(--transition);
+        }
+        .bottom-cta .btn-cta-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(232,119,91,0.6);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            padding: 16px 20px 30px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(11, 61, 92, 0.06);
+        }
+        .footer a {
+            color: var(--ocean-mid);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--text-mid);
+            font-size: 0.75rem;
+        }
+
+        /* ── FLOATING MOBILE CTA ── */
+        .floating-cta {
+            display: none;
+        }
+        @media (max-width: 480px) {
+            .floating-cta {
+                display: flex;
+                position: fixed;
+                bottom: 16px;
+                left: 16px;
+                right: 16px;
+                z-index: 99;
+                background: var(--coral);
+                color: #fff;
+                padding: 14px 20px;
+                border-radius: 30px;
+                text-align: center;
+                font-weight: 700;
+                font-size: 0.9rem;
+                letter-spacing: 0.3px;
+                box-shadow: 0 12px 35px rgba(232,119,91,0.55);
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                animation: floatUp 0.6s ease-out;
+                text-decoration: none;
+                border: none;
+                font-family: var(--font-body);
+            }
+            @keyframes floatUp {
+                from { transform: translateY(80px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            .bottom-cta { margin-bottom: 80px; }
+            .footer { padding-bottom: 90px; }
+        }
+
+        /* ── RESPONSIVE TWEAKS ── */
+        @media (min-width: 400px) {
+            .hero h1 { font-size: 2.3rem; }
+            .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+        }
+        @media (min-width: 520px) {
+            .container { padding: 0 24px; }
+            .hero h1 { font-size: 2.5rem; }
+            .lead-card { padding: 30px 26px; }
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ── LOADING SPINNER ── */
+        .btn-submit.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        .btn-submit .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .btn-submit.loading .spinner {
+            display: inline-block;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        select:focus-visible {
+            outline: 2px solid var(--ocean-light);
+            outline-offset: 1px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar: First AI-Powered claim -->
+    <div class="announcement-bar">
+        🤖 <span>The First AI‑Powered</span> Insurance Leads Finder — Ft. Lauderdale — Limited Spots
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="MorsMutal Home">
+                <div class="nav-logo-icon">⚓</div>
+                MorsMutal
+            </a>
+            <button class="nav-cta" onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth',block:'center'});" aria-label="Get AI Leads Now">
+                Get AI Leads
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO with AI messaging -->
+    <section class="hero container">
+        <div class="hero-badge">
+            <span class="ai-icon">🧠</span> First AI‑Powered Lead Match
+        </div>
+        <h1>
+            AI‑Powered <span class="highlight">Insurance Leads</span><br>
+            <span class="underline-gold">Exclusively for</span> Ft. Lauderdale
+        </h1>
+        <p class="hero-subtitle">
+            We use proprietary AI to source, verify, and deliver exclusive insurance prospects ready to convert. Pay only for quality.
+        </p>
+        <div class="hero-stats-row">
+            <div class="hero-stat">
+                <div class="hero-stat-number">2,400+</div>
+                <div class="hero-stat-label">AI‑Verified Leads</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">94%</div>
+                <div class="hero-stat-label">Contact Rate</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">18min</div>
+                <div class="hero-stat-label">Avg. Response</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD CAPTURE CARD -->
+    <section class="container" id="leadSection">
+        <div class="lead-card reveal">
+            <h3>📋 Request Your AI‑Matched Batch</h3>
+            <p class="card-subtitle">Tell us your needs — our AI will match you with qualified Ft. Lauderdale prospects.</p>
+            <form id="leadForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="John" required autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Smith" required autocomplete="family-name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" placeholder="you@agency.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(954) 555-0123" required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="insuranceType">Insurance Type Needed</label>
+                    <select id="insuranceType" required>
+                        <option value="" disabled selected>Select type...</option>
+                        <option value="auto">Auto Insurance</option>
+                        <option value="home">Homeowners Insurance</option>
+                        <option value="life">Life Insurance</option>
+                        <option value="health">Health Insurance</option>
+                        <option value="commercial">Commercial / Business</option>
+                        <option value="flood">Flood Insurance</option>
+                        <option value="bundle">Bundle (Multiple)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="leadVolume">Monthly Lead Volume</label>
+                    <select id="leadVolume" required>
+                        <option value="" disabled selected>Estimated volume...</option>
+                        <option value="10-25">10 – 25 leads</option>
+                        <option value="25-50">25 – 50 leads</option>
+                        <option value="50-100">50 – 100 leads</option>
+                        <option value="100+">100+ leads</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    Get AI‑Verified Leads <span class="spinner"></span>
+                </button>
+                <div class="form-trust">
+                    <span class="lock-icon">🔒</span> Your info is secure — never shared or sold.
+                </div>
+            </form>
+            <div class="form-success" id="formSuccess">
+                <div class="check-circle">✓</div>
+                <h4>You're All Set!</h4>
+                <p>Our AI will start matching your agency with high‑intent Ft. Lauderdale prospects. Expect a call within <strong>1 business day</strong>.</p>
+            </div>
+        </div>
+        <div class="trust-strip reveal">
+            <span class="stars">★★★★★</span> Trusted by 150+ FL Agencies &nbsp;|&nbsp; 🤖 AI‑Driven Verification
+        </div>
+    </section>
+
+    <!-- SERVICES (unchanged types, but we can note AI matching) -->
+    <section class="container services-section reveal">
+        <div class="section-header">
+            <span class="tag">AI‑Optimized Leads</span>
+            <h2>Insurance Lead Types</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🚗</span>
+                <h4>Auto Insurance</h4>
+                <p>Drivers seeking quotes in Broward County</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏠</span>
+                <h4>Homeowners</h4>
+                <p>Ft. Lauderdale homeowners ready to bind</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🌊</span>
+                <h4>Flood Insurance</h4>
+                <p>Coastal property owners in flood zones</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">💼</span>
+                <h4>Commercial</h4>
+                <p>Small business owners across S. Florida</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">❤️</span>
+                <h4>Life Insurance</h4>
+                <p>Families planning their financial future</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📦</span>
+                <h4>Bundle Leads</h4>
+                <p>Multi-policy shoppers for higher LTV</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS with AI verification -->
+    <section class="container steps-section reveal">
+        <div class="section-header">
+            <span class="tag">AI‑Driven Process</span>
+            <h2>How It Works</h2>
+        </div>
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h4>Tell Us Your Criteria</h4>
+                <p>Zip codes, policy types, and volume preferences — our AI customizes the lead profile for your agency.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h4>AI Verification</h4>
+                <p>Our proprietary AI engine validates contact details and intent signals before delivery, ensuring every lead is sales-ready.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h4>You Close the Deal</h4>
+                <p>Receive AI‑qualified leads in real‑time via email or CRM. Focus on selling, not prospecting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL (mention AI impact) -->
+    <section class="container testimonial-section reveal">
+        <div class="section-header">
+            <span class="tag">Client Success</span>
+            <h2>What Agencies Say</h2>
+        </div>
+        <div class="testimonial-card">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">
+                MorsMutal's AI completely transformed our pipeline. The leads are local, verified, and actually answer their phones.
+                We've closed more policies in 3 months than we did all last year.
+            </p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">MR</div>
+                <div class="testimonial-info">
+                    <strong>Maria Rodriguez</strong>
+                    <span>Agency Owner, Ft. Lauderdale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="container reveal">
+        <div class="bottom-cta">
+            <h3>Ready to Experience AI‑Powered Growth?</h3>
+            <p>Join the top-producing agencies in Ft. Lauderdale already using MorsMutal's first‑of‑its‑kind AI lead finder.</p>
+            <a href="#leadSection" class="btn-cta-secondary" onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth',block:'center'});">
+                🤖 Get Your AI Leads
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-location">📍 Ft. Lauderdale, Florida</div>
+        <p>&copy; 2026 <strong>MorsMutal</strong> — The First AI‑Powered Leads Finder. All rights reserved. &nbsp;|&nbsp;
+            <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+            <a href="#">Terms of Service</a>
+        </p>
+        <p style="margin-top:4px;">Proudly serving insurance agencies across Broward County & South Florida.</p>
+    </footer>
+
+    <!-- FLOATING MOBILE CTA -->
+    <a href="#leadSection" class="floating-cta" id="floatingCta" onclick="document.getElementById('leadForm').scrollIntoView({behavior:'smooth',block:'center'});">
+        🤖 Get AI‑Matched Leads
+    </a>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const form = document.getElementById('leadForm');
+            const success = document.getElementById('formSuccess');
+
+            btn.classList.add('loading');
+            btn.textContent = 'Matching with AI... ';
+            btn.appendChild(document.querySelector('.spinner'));
+
+            const formData = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                insuranceType: document.getElementById('insuranceType').value,
+                leadVolume: document.getElementById('leadVolume').value,
+                source: 'morsmutal.com',
+                page: 'Ft. Lauderdale AI Landing',
+                timestamp: new Date().toISOString(),
+            };
+
+            setTimeout(() => {
+                console.log('🤖 AI Lead Captured:', formData);
+                // Replace with real endpoint:
+                // fetch('https://your-api.com/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
+
+                btn.classList.remove('loading');
+                form.classList.add('hidden');
+                success.classList.add('show');
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                btn.textContent = 'Get AI‑Verified Leads';
+            }, 1200);
+        }
+
+        // Scroll reveal
+        function handleReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < windowHeight * 0.88) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleReveal);
+        window.addEventListener('resize', handleReveal);
+        document.addEventListener('DOMContentLoaded', handleReveal);
+
+        // Floating CTA toggle
+        const floatingCta = document.getElementById('floatingCta');
+        const leadSection = document.getElementById('leadSection');
+        let floatingVisible = true;
+        function toggleFloatingCta() {
+            if (!floatingCta || !leadSection) return;
+            const leadRect = leadSection.getBoundingClientRect();
+            const isLeadSectionVisible = leadRect.top < window.innerHeight && leadRect.bottom > 0;
+            if (isLeadSectionVisible && floatingVisible) {
+                floatingCta.style.opacity = '0';
+                floatingCta.style.pointerEvents = 'none';
+                floatingVisible = false;
+            } else if (!isLeadSectionVisible && !floatingVisible) {
+                floatingCta.style.opacity = '1';
+                floatingCta.style.pointerEvents = 'auto';
+                floatingVisible = true;
+            }
+        }
+        window.addEventListener('scroll', toggleFloatingCta);
+        document.addEventListener('DOMContentLoaded', toggleFloatingCta);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Phone formatting
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let val = e.target.value.replace(/\D/g, '');
+                if (val.length > 10) val = val.slice(0, 10);
+                if (val.length >= 7) {
+                    val = `(${val.slice(0,3)}) ${val.slice(3,6)}-${val.slice(6)}`;
+                } else if (val.length >= 4) {
+                    val = `(${val.slice(0,3)}) ${val.slice(3)}`;
+                } else if (val.length >= 1) {
+                    val = `(${val}`;
+                }
+                e.target.value = val;
+            });
+        }
+
+        console.log('🧠 MorsMutal.com — First AI‑Powered Insurance Leads Finder in Ft. Lauderdale');
+    </script>
+</body>
+</html>
