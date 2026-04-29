@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MorsMutal | Get Your Best Insurance Offers — Free, Fast & AI‑Matched</title>
+    <meta name="description" content="Tell us what you need and MorsMutal's AI instantly matches you with the top insurance offers in Ft. Lauderdale. Free, no obligation, results in minutes.">
+    <style>
+        :root {
+            --ocean-deep: #0B3D5C;
+            --ocean-mid: #145C7A;
+            --ocean-light: #1A7FA0;
+            --coral: #E8775B;
+            --coral-glow: #F4976C;
+            --sand: #FBF5ED;
+            --sand-warm: #F5E6D3;
+            --white: #FFFFFF;
+            --off-white: #F9F7F4;
+            --text-dark: #1A1A2E;
+            --text-mid: #3D4F5F;
+            --text-light: #6B7D8E;
+            --gold: #C8963E;
+            --success: #2D9F6E;
+            --shadow-sm: 0 2px 8px rgba(11, 61, 92, 0.06);
+            --shadow-md: 0 8px 30px rgba(11, 61, 92, 0.10);
+            --shadow-lg: 0 20px 50px rgba(11, 61, 92, 0.14);
+            --shadow-xl: 0 30px 70px rgba(11, 61, 92, 0.18);
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--sand);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image:
+                radial-gradient(ellipse at 80% 5%, rgba(26, 127, 160, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 88%, rgba(232, 119, 91, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 45%, rgba(200, 150, 62, 0.04) 0%, transparent 60%);
+        }
+
+        /* ── ANNOUNCEMENT BAR ── */
+        .announcement-bar {
+            background: var(--ocean-deep);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.8rem;
+            letter-spacing: 0.4px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        .announcement-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--coral-glow), var(--gold), var(--coral-glow), transparent);
+            animation: shimmerBar 3s ease-in-out infinite;
+        }
+        @keyframes shimmerBar {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .announcement-bar span {
+            color: var(--coral-glow);
+            font-weight: 800;
+            background: rgba(255,255,255,0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin: 0 3px;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.84);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(11,61,92,0.08);
+            padding: 0 20px;
+            transition: var(--transition);
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--ocean-deep);
+            letter-spacing: -0.5px;
+        }
+        .nav-logo-icon {
+            width: 38px; height: 38px;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: #fff;
+            box-shadow: 0 4px 14px rgba(20,92,122,0.3);
+        }
+        .nav-cta {
+            background: var(--coral);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(232,119,91,0.35);
+            text-decoration: none;
+        }
+        .nav-cta:hover {
+            background: #d4694f;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(232,119,91,0.45);
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 50px 0 40px;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr 440px;
+                gap: 60px;
+                align-items: start;
+            }
+            .hero { padding: 70px 0 60px; }
+        }
+        .hero-text { text-align: center; }
+        @media (min-width: 768px) { .hero-text { text-align: left; } }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(26, 127, 160, 0.08);
+            border: 1px solid rgba(26, 127, 160, 0.2);
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--ocean-mid);
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.1rem;
+            font-weight: 700;
+            line-height: 1.18;
+            color: var(--ocean-deep);
+            letter-spacing: -0.8px;
+            margin-bottom: 16px;
+        }
+        @media (min-width: 520px)  { .hero h1 { font-size: 2.5rem; } }
+        @media (min-width: 768px)  { .hero h1 { font-size: 3rem; } }
+        @media (min-width: 1024px) { .hero h1 { font-size: 3.5rem; } }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--coral), var(--coral-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero h1 .underline-gold {
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 .underline-gold::after {
+            content: '';
+            position: absolute;
+            bottom: 3px; left: 0;
+            width: 100%; height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-mid);
+            margin-bottom: 28px;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+        @media (min-width: 768px) { .hero-subtitle { font-size: 1.1rem; } }
+        .hero-text .hero-subtitle { margin-left: auto; margin-right: auto; }
+        @media (min-width: 768px) { .hero-text .hero-subtitle { margin-left: 0; margin-right: 0; } }
+
+        /* ── BENEFIT PILLS ── */
+        .benefit-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+        @media (min-width: 768px) { .benefit-pills { justify-content: flex-start; } }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--white);
+            border: 1px solid rgba(11,61,92,0.1);
+            border-radius: 30px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+            box-shadow: var(--shadow-sm);
+        }
+        .pill-icon { font-size: 1rem; }
+
+        /* ── TRUST STATS ── */
+        .trust-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media (min-width: 768px) { .trust-stats { justify-content: flex-start; } }
+        .trust-stat-number {
+            font-family: var(--font-heading);
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--ocean-deep);
+        }
+        .trust-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 600;
+        }
+
+        /* ── QUOTE CARD ── */
+        .quote-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(11,61,92,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1A7FA0, #E8775B, #C8963E);
+        }
+        @media (min-width: 768px) {
+            .quote-card {
+                position: sticky;
+                top: 80px;
+            }
+        }
+        .quote-card-header {
+            margin-bottom: 20px;
+        }
+        .quote-card-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--ocean-deep);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .quote-card-header p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        /* ── MULTI-STEP FORM ── */
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 24px;
+        }
+        .step-dot {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: #E8ECF1;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .step-dot.active {
+            background: var(--ocean-mid);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(20,92,122,0.3);
+        }
+        .step-dot.done {
+            background: var(--success);
+            color: #fff;
+        }
+        .step-line {
+            flex: 1;
+            height: 2px;
+            background: #E8ECF1;
+            transition: var(--transition);
+        }
+        .step-line.done { background: var(--success); }
+
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeInUp 0.35s ease; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #E8ECF1;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            background: var(--off-white);
+            transition: var(--transition);
+            color: var(--text-dark);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--ocean-light);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(26,127,160,0.08);
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%233D4F5F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row .form-group { flex: 1; }
+
+        /* coverage type grid */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .coverage-option {
+            border: 2px solid #E8ECF1;
+            border-radius: var(--radius-sm);
+            padding: 12px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--off-white);
+            user-select: none;
+        }
+        .coverage-option:hover { border-color: var(--ocean-light); background: #fff; }
+        .coverage-option.selected {
+            border-color: var(--ocean-mid);
+            background: rgba(26,127,160,0.06);
+        }
+        .coverage-option input[type="checkbox"] { display: none; }
+        .coverage-icon { font-size: 1.5rem; display: block; margin-bottom: 4px; }
+        .coverage-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+        }
+        .form-group small {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* buttons */
+        .btn-next, .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--coral), #d45f42);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.4px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+            box-shadow: 0 8px 28px rgba(232,119,91,0.4);
+            margin-top: 4px;
+        }
+        .btn-next:hover, .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(232,119,91,0.5);
+        }
+        .btn-next:active, .btn-submit:active { transform: scale(0.97); }
+        .btn-back {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.82rem;
+            font-family: var(--font-body);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 12px;
+            padding: 0;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-back:hover { color: var(--ocean-mid); }
+
+        .btn-submit.loading { pointer-events: none; opacity: 0.8; }
+        .spinner {
+            display: none;
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .btn-submit.loading .spinner { display: inline-block; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .form-trust {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* ── SUCCESS ── */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px 10px;
+            animation: fadeInUp 0.5s ease;
+        }
+        .form-success.show { display: block; }
+        .check-circle {
+            width: 72px; height: 72px;
+            background: #e6f7ee;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 2.2rem;
+            color: var(--success);
+        }
+        .form-success h4 {
+            font-family: var(--font-heading);
+            color: var(--ocean-deep);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .form-success p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.5; }
+        .match-preview {
+            margin-top: 20px;
+            background: var(--off-white);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: left;
+        }
+        .match-preview-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--ocean-mid);
+            margin-bottom: 10px;
+        }
+        .match-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #E8ECF1;
+        }
+        .match-item:last-child { border-bottom: none; }
+        .match-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            flex-shrink: 0;
+        }
+        .match-item span { font-size: 0.82rem; color: var(--text-mid); }
+
+        /* ── HOW IT WORKS ── */
+        .section { padding: 60px 0; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--coral);
+            margin-bottom: 8px;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--ocean-deep);
+            letter-spacing: -0.5px;
+        }
+        @media (min-width: 768px) { .section-header h2 { font-size: 2.2rem; } }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 640px) { .process-grid { grid-template-columns: repeat(3, 1fr); } }
+        .process-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(11,61,92,0.04);
+            position: relative;
+        }
+        .process-number {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 14px rgba(20,92,122,0.25);
+        }
+        .process-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .process-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--ocean-deep);
+            margin-bottom: 6px;
+        }
+        .process-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+
+        /* ── WHAT WE MATCH ── */
+        .coverage-section { padding: 0 0 60px; }
+        .coverage-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (min-width: 640px)  { .coverage-cards-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1024px) { .coverage-cards-grid { grid-template-columns: repeat(6, 1fr); } }
+        .cov-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 22px 14px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(11,61,92,0.04);
+            transition: var(--transition);
+        }
+        .cov-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .cov-card .icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+        .cov-card h4 { font-size: 0.85rem; font-weight: 700; color: var(--ocean-deep); margin-bottom: 3px; }
+        .cov-card p { font-size: 0.7rem; color: var(--text-light); line-height: 1.4; }
+
+        /* ── WHY US ── */
+        .why-section {
+            padding: 0 0 60px;
+            background: linear-gradient(160deg, var(--ocean-deep) 0%, #0a2f45 100%);
+            border-radius: var(--radius-xl);
+            margin: 0 20px 60px;
+            padding: 52px 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .why-section::before {
+            content: '';
+            position: absolute; top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+        }
+        .why-section .section-header .tag { color: var(--coral-glow); }
+        .why-section .section-header h2 { color: #fff; }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            position: relative; z-index: 1;
+        }
+        @media (min-width: 640px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+        .why-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: 22px 18px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+        .why-item .why-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .why-item h4 { color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+        .why-item p { color: rgba(255,255,255,0.7); font-size: 0.78rem; line-height: 1.5; }
+
+        /* ── TESTIMONIAL ── */
+        .testimonials-section { padding: 0 0 60px; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 640px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px 20px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--coral);
+            position: relative;
+        }
+        .testimonial-card .quote-mark {
+            font-size: 3rem;
+            color: rgba(232,119,91,0.15);
+            position: absolute;
+            top: 8px; left: 14px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-card .quote-text {
+            font-style: italic;
+            color: var(--text-mid);
+            font-size: 0.88rem;
+            margin-bottom: 14px;
+            position: relative; z-index: 1;
+            padding-left: 6px;
+            line-height: 1.55;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 10px; }
+        .testimonial-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-light));
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .testimonial-info strong { display: block; font-size: 0.85rem; color: var(--ocean-deep); }
+        .testimonial-info span { font-size: 0.7rem; color: var(--text-light); }
+        .stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 4px; display: block; }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            padding: 20px 20px 36px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(11,61,92,0.06);
+        }
+        .footer a { color: var(--ocean-mid); text-decoration: none; font-weight: 500; }
+        .footer-location {
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+            margin-bottom: 6px; font-weight: 600; color: var(--text-mid); font-size: 0.75rem;
+        }
+
+        /* ── FLOATING MOBILE CTA ── */
+        .floating-cta { display: none; }
+        @media (max-width: 480px) {
+            .floating-cta {
+                display: flex;
+                position: fixed;
+                bottom: 16px; left: 16px; right: 16px;
+                z-index: 99;
+                background: var(--coral);
+                color: #fff;
+                padding: 14px 20px;
+                border-radius: 30px;
+                text-align: center;
+                font-weight: 700; font-size: 0.9rem;
+                letter-spacing: 0.3px;
+                box-shadow: 0 12px 35px rgba(232,119,91,0.55);
+                cursor: pointer;
+                justify-content: center; align-items: center; gap: 8px;
+                animation: floatUp 0.6s ease-out;
+                text-decoration: none;
+                border: none;
+                font-family: var(--font-body);
+            }
+            @keyframes floatUp {
+                from { transform: translateY(80px); opacity: 0; }
+                to   { transform: translateY(0);    opacity: 1; }
+            }
+            .footer { padding-bottom: 90px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        🎯 <span>Free &amp; No Obligation</span> — We Match You With the Best Insurance Offers in Ft. Lauderdale
+    </div>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="MorsMutal Home">
+                <div class="nav-logo-icon">⚓</div>
+                MorsMutal
+            </a>
+            <a href="#quoteSection" class="nav-cta" onclick="document.getElementById('quoteSection').scrollIntoView({behavior:'smooth',block:'start'});">
+                Get My Offers
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero container" id="quoteSection">
+        <div class="hero-grid">
+
+            <!-- Left: value proposition -->
+            <div class="hero-text">
+                <div class="hero-badge">🎯 AI‑Powered Offer Matching</div>
+                <h1>
+                    We'll Match You With<br>
+                    the <span class="highlight">Best Insurance</span><br>
+                    <span class="underline-gold">Offers Near You</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Answer a few quick questions and our AI instantly compares top-rated Ft. Lauderdale insurers to find your best rates — 100% free and no obligation.
+                </p>
+                <div class="benefit-pills">
+                    <div class="pill"><span class="pill-icon">⚡</span> Results in Minutes</div>
+                    <div class="pill"><span class="pill-icon">🔒</span> Secure &amp; Private</div>
+                    <div class="pill"><span class="pill-icon">🆓</span> Completely Free</div>
+                    <div class="pill"><span class="pill-icon">📞</span> No Spam Calls</div>
+                </div>
+                <div class="trust-stats">
+                    <div>
+                        <div class="trust-stat-number">12,000+</div>
+                        <div class="trust-stat-label">Customers Matched</div>
+                    </div>
+                    <div>
+                        <div class="trust-stat-number">$680</div>
+                        <div class="trust-stat-label">Avg. Annual Savings</div>
+                    </div>
+                    <div>
+                        <div class="trust-stat-number">4.9★</div>
+                        <div class="trust-stat-label">Customer Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: multi-step form -->
+            <div>
+                <div class="quote-card reveal">
+                    <div class="quote-card-header">
+                        <h3>🤖 Get Your AI‑Matched Offers</h3>
+                        <p>Takes about 60 seconds — we do the rest.</p>
+                    </div>
+
+                    <!-- Step Indicators -->
+                    <div class="step-indicator" id="stepIndicator">
+                        <div class="step-dot active" id="dot1">1</div>
+                        <div class="step-line" id="line1"></div>
+                        <div class="step-dot" id="dot2">2</div>
+                        <div class="step-line" id="line2"></div>
+                        <div class="step-dot" id="dot3">3</div>
+                    </div>
+
+                    <form id="quoteForm" novalidate>
+
+                        <!-- Step 1: Coverage needs -->
+                        <div class="form-step active" id="step1">
+                            <p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:14px;font-weight:600;">What type(s) of insurance do you need?</p>
+                            <div class="coverage-grid">
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="auto">
+                                    <span class="coverage-icon">🚗</span>
+                                    <span class="coverage-label">Auto</span>
+                                </label>
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="home">
+                                    <span class="coverage-icon">🏠</span>
+                                    <span class="coverage-label">Homeowners</span>
+                                </label>
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="life">
+                                    <span class="coverage-icon">❤️</span>
+                                    <span class="coverage-label">Life</span>
+                                </label>
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="health">
+                                    <span class="coverage-icon">🏥</span>
+                                    <span class="coverage-label">Health</span>
+                                </label>
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="flood">
+                                    <span class="coverage-icon">🌊</span>
+                                    <span class="coverage-label">Flood</span>
+                                </label>
+                                <label class="coverage-option" onclick="toggleCoverage(this)">
+                                    <input type="checkbox" name="coverage" value="commercial">
+                                    <span class="coverage-icon">💼</span>
+                                    <span class="coverage-label">Business</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">Your ZIP Code</label>
+                                <input type="text" id="zipCode" placeholder="e.g. 33301" maxlength="5" inputmode="numeric">
+                            </div>
+                            <button type="button" class="btn-next" onclick="goToStep(2)">Continue →</button>
+                        </div>
+
+                        <!-- Step 2: Personal info -->
+                        <div class="form-step" id="step2">
+                            <button type="button" class="btn-back" onclick="goToStep(1)">← Back</button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" placeholder="Jane" autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Doe" autocomplete="family-name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="you@email.com" autocomplete="email">
+                                <small>We'll send your matched offers here.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="(954) 555-0100" autocomplete="tel">
+                                <small>Only your matched agents will contact you.</small>
+                            </div>
+                            <button type="button" class="btn-next" onclick="goToStep(3)">Continue →</button>
+                        </div>
+
+                        <!-- Step 3: Budget & submit -->
+                        <div class="form-step" id="step3">
+                            <button type="button" class="btn-back" onclick="goToStep(2)">← Back</button>
+                            <div class="form-group">
+                                <label for="budget">Monthly Budget</label>
+                                <select id="budget">
+                                    <option value="" disabled selected>Select your range...</option>
+                                    <option value="under100">Under $100/mo</option>
+                                    <option value="100-200">$100 – $200/mo</option>
+                                    <option value="200-400">$200 – $400/mo</option>
+                                    <option value="400+">$400+/mo</option>
+                                    <option value="unsure">Not sure yet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentInsurer">Current Insurance Company</label>
+                                <select id="currentInsurer">
+                                    <option value="" disabled selected>Select or skip...</option>
+                                    <option value="none">No current insurance</option>
+                                    <option value="stateauto">State Farm</option>
+                                    <option value="allstate">Allstate</option>
+                                    <option value="geico">GEICO</option>
+                                    <option value="progressive">Progressive</option>
+                                    <option value="usaa">USAA</option>
+                                    <option value="liberty">Liberty Mutual</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                🤖 Find My Best Offers <span class="spinner"></span>
+                            </button>
+                            <div class="form-trust">
+                                <span>🔒</span> Your info is encrypted and never sold.
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!-- Success State -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="check-circle">✓</div>
+                        <h4>Your Matches Are Ready!</h4>
+                        <p>Our AI has found top offers for you in Ft. Lauderdale. A licensed advisor will reach out within <strong>1 business day</strong> with your personalized quotes.</p>
+                        <div class="match-preview">
+                            <div class="match-preview-label">🤖 AI Match Preview</div>
+                            <div class="match-item">
+                                <div class="match-dot"></div>
+                                <span>3 offers matched to your coverage needs</span>
+                            </div>
+                            <div class="match-item">
+                                <div class="match-dot"></div>
+                                <span>Estimated savings: up to <strong>$520/year</strong></span>
+                            </div>
+                            <div class="match-item">
+                                <div class="match-dot"></div>
+                                <span>Response expected within 1 business day</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end quote-card -->
+            </div>
+
+        </div><!-- end hero-grid -->
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section container reveal">
+        <div class="section-header">
+            <span class="tag">Simple 3-Step Process</span>
+            <h2>How We Match You</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="process-number">1</div>
+                <span class="process-icon">📝</span>
+                <h4>Tell Us What You Need</h4>
+                <p>Answer a few quick questions about the coverage you're looking for and your location in Ft. Lauderdale.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">2</div>
+                <span class="process-icon">🤖</span>
+                <h4>AI Finds Your Best Matches</h4>
+                <p>Our proprietary AI scans top-rated local insurers, compares rates, and ranks offers by value — in seconds.</p>
+            </div>
+            <div class="process-card">
+                <div class="process-number">3</div>
+                <span class="process-icon">🏆</span>
+                <h4>You Pick the Best Deal</h4>
+                <p>A licensed advisor presents your top matches. No pressure — you choose what's right for you, or walk away.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COVERAGE TYPES -->
+    <section class="container coverage-section reveal">
+        <div class="section-header">
+            <span class="tag">What We Match</span>
+            <h2>All Major Coverage Types</h2>
+        </div>
+        <div class="coverage-cards-grid">
+            <div class="cov-card">
+                <span class="icon">🚗</span>
+                <h4>Auto</h4>
+                <p>Cars, trucks &amp; motorcycles across Broward</p>
+            </div>
+            <div class="cov-card">
+                <span class="icon">🏠</span>
+                <h4>Homeowners</h4>
+                <p>Single-family, condo &amp; rental properties</p>
+            </div>
+            <div class="cov-card">
+                <span class="icon">🌊</span>
+                <h4>Flood</h4>
+                <p>Coastal &amp; flood-zone properties in S. Florida</p>
+            </div>
+            <div class="cov-card">
+                <span class="icon">❤️</span>
+                <h4>Life</h4>
+                <p>Term, whole &amp; universal life coverage</p>
+            </div>
+            <div class="cov-card">
+                <span class="icon">🏥</span>
+                <h4>Health</h4>
+                <p>Individual, family &amp; Medicare plans</p>
+            </div>
+            <div class="cov-card">
+                <span class="icon">💼</span>
+                <h4>Business</h4>
+                <p>GL, BOP &amp; commercial auto for S. FL businesses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY MORSMUTUAL -->
+    <div class="container">
+        <div class="why-section reveal">
+            <div class="section-header">
+                <span class="tag">Why MorsMutal</span>
+                <h2>The Smarter Way to Shop Insurance</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="why-icon">🤖</span>
+                    <h4>AI‑Powered Matching</h4>
+                    <p>Our AI compares dozens of insurers in real‑time so you get the best rate, not just any rate.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">📍</span>
+                    <h4>100% Local</h4>
+                    <p>We specialize in Ft. Lauderdale &amp; Broward County — local agents who know your area.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🆓</span>
+                    <h4>Always Free</h4>
+                    <p>Matching and quotes are completely free. We're paid by insurers only if you choose to buy.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-icon">🛡️</span>
+                    <h4>No Spam Guarantee</h4>
+                    <p>Your info goes only to your matched agents — never sold to marketing lists or call centers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="container testimonials-section reveal">
+        <div class="section-header">
+            <span class="tag">Real Customers</span>
+            <h2>What Our Customers Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <span class="stars">★★★★★</span>
+                <p class="quote-text">I was paying way too much for auto insurance. MorsMutal matched me with a local agent and I saved $480 a year — took less than 5 minutes.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JS</div>
+                    <div class="testimonial-info">
+                        <strong>James S.</strong>
+                        <span>Ft. Lauderdale, FL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <span class="stars">★★★★★</span>
+                <p class="quote-text">After Hurricane season scares I needed better flood coverage. The AI found me two options I never would have found on my own. Highly recommend.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CP</div>
+                    <div class="testimonial-info">
+                        <strong>Carmen P.</strong>
+                        <span>Pompano Beach, FL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <span class="stars">★★★★★</span>
+                <p class="quote-text">Bundled my home and auto through MorsMutal. The agent was local, professional, and got me way better rates than my old company. Easy process.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">DM</div>
+                    <div class="testimonial-info">
+                        <strong>David M.</strong>
+                        <span>Hollywood, FL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-location">📍 Ft. Lauderdale, Florida</div>
+        <p>&copy; 2026 <strong>MorsMutal</strong> — The First AI‑Powered Insurance Matching Service. All rights reserved. &nbsp;|&nbsp;
+            <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+            <a href="#">Terms of Service</a>
+        </p>
+        <p style="margin-top:4px;">Proudly serving Broward County &amp; South Florida. &nbsp;|&nbsp; <a href="index.html">For Insurance Agencies →</a></p>
+    </footer>
+
+    <!-- Floating Mobile CTA -->
+    <a href="#quoteSection" class="floating-cta" onclick="document.getElementById('quoteSection').scrollIntoView({behavior:'smooth'});">
+        🎯 Get My Free Offers
+    </a>
+
+    <script>
+        let currentStep = 1;
+
+        function toggleCoverage(el) {
+            el.classList.toggle('selected');
+            const cb = el.querySelector('input[type="checkbox"]');
+            if (cb) cb.checked = !cb.checked;
+        }
+
+        function goToStep(step) {
+            // Validate before moving forward
+            if (step > currentStep) {
+                if (currentStep === 1) {
+                    const anySelected = document.querySelectorAll('.coverage-option.selected').length > 0;
+                    if (!anySelected) {
+                        alert('Please select at least one insurance type.');
+                        return;
+                    }
+                } else if (currentStep === 2) {
+                    const first = document.getElementById('firstName').value.trim();
+                    const last  = document.getElementById('lastName').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    if (!first || !last || !email || !phone) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                }
+            }
+
+            // Update step dots
+            const prevDot = document.getElementById('dot' + currentStep);
+            if (step > currentStep) prevDot.classList.replace('active', 'done');
+
+            // Update connecting lines
+            if (step === 2) {
+                document.getElementById('line1').classList.add('done');
+            } else if (step === 3) {
+                document.getElementById('line1').classList.add('done');
+                document.getElementById('line2').classList.add('done');
+            }
+            if (step < currentStep) {
+                // going back — reset lines
+                if (step === 1) {
+                    document.getElementById('line1').classList.remove('done');
+                    document.getElementById('dot2').className = 'step-dot';
+                }
+                if (step === 2) {
+                    document.getElementById('line2').classList.remove('done');
+                    document.getElementById('dot3').className = 'step-dot';
+                }
+                prevDot.className = 'step-dot';
+            }
+
+            document.getElementById('step' + currentStep).classList.remove('active');
+            currentStep = step;
+            document.getElementById('step' + currentStep).classList.add('active');
+
+            const activeDot = document.getElementById('dot' + currentStep);
+            activeDot.classList.add('active');
+        }
+
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.classList.add('loading');
+            btn.textContent = 'Matching your offers…';
+
+            setTimeout(() => {
+                document.getElementById('stepIndicator').style.display = 'none';
+                document.getElementById('quoteForm').classList.add('hidden');
+                const success = document.getElementById('formSuccess');
+                success.classList.add('show');
+                success.style.display = 'block';
+            }, 1800);
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+
+        // ZIP code numeric only
+        document.getElementById('zipCode').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
+
+</body>
+</html>
